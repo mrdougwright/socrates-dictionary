@@ -1,13 +1,3 @@
-#{"""}Create a Dictionary class. 
-#hen you create a new dictionary (such as one for English), 
-#it should be an empty hash. Then, you should be able to add words 
-#and their definition by calling a method and passing in a hash as an 
-#argument. You should also be able to list all of the words and their 
-#definitions in alphabetical order with another method. Finally, you 
-#should be able to search the dictionary by passing in the first few 
-#letters of a word and returning all of the words that start with those 
-#letters, along with their definitions.
-
 class Dictionary
   attr_accessor :entries
   
@@ -16,9 +6,7 @@ class Dictionary
   end
   
   def add(word)
-    if !word.is_a?(Hash)
-      word = Hash[word,nil]
-    end
+    word = Hash[word,nil] unless word.is_a?(Hash)
     @entries.merge!(word)
   end
   
@@ -43,14 +31,12 @@ class Dictionary
   end
 end
 
-english = Dictionary.new
-english.add('fish'=>'aquatic animal')
-english.add('great'=>'remarkable')
-english.add('fiend' => 'wicked person')
-puts english.find('fi')
-
-
-
-
-
-
+#{"""}Create a Dictionary class. 
+#hen you create a new dictionary (such as one for English), 
+#it should be an empty hash. Then, you should be able to add words 
+#and their definition by calling a method and passing in a hash as an 
+#argument. You should also be able to list all of the words and their 
+#definitions in alphabetical order with another method. Finally, you 
+#should be able to search the dictionary by passing in the first few 
+#letters of a word and returning all of the words that start with those 
+#letters, along with their definitions.
