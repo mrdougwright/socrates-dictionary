@@ -31,17 +31,23 @@ class Dictionary
   end
   
   def find(word)
+    n = word.length
+    tempHash = {}
     
-    word.each_char do |letter|
-      puts letter
+    @entries.each do |dictWord, defin|
+      if word == dictWord[0..n-1]
+        tempHash.merge!({dictWord => defin})
+      end
     end
-    
-    #@entries.each do |dictWord|
-     # if 
+    tempHash
   end
 end
 
-
+english = Dictionary.new
+english.add('fish'=>'aquatic animal')
+english.add('great'=>'remarkable')
+english.add('fiend' => 'wicked person')
+puts english.find('fi')
 
 
 
